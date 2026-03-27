@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">lab2</string>
-    <string name="textView2">&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;</string>
-    <string name="bnt_ok">&#x786E;&#x5B9A;</string>
+    <string name="textView2">请输入密码</string>
+    <string name="bnt_ok">确定</string>
     <string name="edit_Password"></string>
     <string name="txt_results"></string>
 </resources>
