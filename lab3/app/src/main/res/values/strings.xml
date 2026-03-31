@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">实验三 Activity</string>
+    <string-array name="major_class_options">
+        <item>空间信息与数字技术 2301 班</item>
+        <item>地理信息科学 2302 班</item>
+        <item>测绘工程 2303 班</item>
+    </string-array>
+    <string-array name="college_options">
+        <item>地理与环境学院</item>
+        <item>遥感与信息工程学院</item>
+        <item>计算机与信息工程学院</item>
+    </string-array>
 </resources>
