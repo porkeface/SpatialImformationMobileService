@@ -19,11 +19,11 @@ class MainActivity : ComponentActivity() {
         buttonOk.setOnClickListener {
             val pwd = editPassword.text.toString().trim()
             if (pwd == "abc") {
-                txtResults.text = "llm是我erzi"
+                txtResults.text = "2312001101陈立彬"
                 txtResults.setTextColor(Color.BLACK)
                 txtResults.textSize = 20f
             } else {
-                txtResults.text = "密码：abc"
+                txtResults.text = "非法用户，请离开！"
                 txtResults.setTextColor(Color.rgb(55, 0, 150))
                 txtResults.textSize = 30f
             }
