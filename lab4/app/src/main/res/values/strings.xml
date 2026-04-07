@@ -3,10 +3,12 @@
     <string name="amap_key">19ddcdf9012ddb44dcaf64625685bca6</string>
     <string name="site_name">井冈山革命根据地</string>
     <string name="site_location">江西省吉安市井冈山市</string>
-    <string name="site_hint">中心已切换到井冈山革命根据地，可作为实验截图的红色教育基地示例。</string>
+    <string name="site_hint">中心已切换到井冈山革命根据地</string>
     <string name="site_snippet">中国革命摇篮，红色教育基地</string>
     <string name="btn_go_site">前往景点</string>
     <string name="btn_show_history">景点历史</string>
+    <string name="btn_basicmap">普通地图</string>
+    <string name="btn_rsmap">卫星地图</string>
     <string name="history_title">井冈山革命根据地历史</string>
     <string name="site_history">井冈山革命根据地位于江西省吉安市井冈山市，是中国共产党创建的第一个农村革命根据地，被誉为中国革命的摇篮。\n\n1927 年秋收起义后，毛泽东率领队伍上井冈山开展武装斗争，逐步形成了井冈山道路，对中国革命的历史进程产生了深远影响。\n\n今天的井冈山既是重要的红色旅游目的地，也是开展党史学习教育和爱国主义教育的重要基地。</string>
 </resources>

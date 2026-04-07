@@ -21,13 +21,15 @@ import com.amap.api.maps2d.model.MarkerOptions;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final LatLng TARGET_SITE = new LatLng(26.5817, 114.1770);
+    private static final LatLng TARGET_SITE = new LatLng(26.575811,114.164421);
 
     private MapView mapView;
     private AMap aMap;
     private Marker targetMarker;
     private Button btnGoSite;
     private Button btnShowHistory;
+    private Button btnBasicMap;
+    private Button btnRsMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +64,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnGoSite = findViewById(R.id.btn_go_site);
         btnShowHistory = findViewById(R.id.btn_show_history);
+        btnBasicMap = findViewById(R.id.btn_basicmap);
+        btnRsMap = findViewById(R.id.btn_rsmap);
         btnGoSite.setOnClickListener(this);
         btnShowHistory.setOnClickListener(this);
+        btnBasicMap.setOnClickListener(this);
+        btnRsMap.setOnClickListener(this);
 
         showTargetSite();
     }
@@ -99,6 +105,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             showTargetSite();
         } else if (id == R.id.btn_show_history) {
             showHistoryDialog();
+        } else if (id == R.id.btn_basicmap) {
+            if (aMap != null) {
+                aMap.setMapType(AMap.MAP_TYPE_NORMAL);
+            }
+        } else if (id == R.id.btn_rsmap) {
+            if (aMap != null) {
+                aMap.setMapType(AMap.MAP_TYPE_SATELLITE);
+            }
         }
     }
 

@@ -73,6 +73,30 @@
                     android:text="@string/btn_show_history"
                     app:backgroundTint="#1D4ED8" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_basicmap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/btn_basicmap"
+                    app:backgroundTint="#0F766E" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_rsmap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_rsmap"
+                    app:backgroundTint="#374151" />
+            </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
