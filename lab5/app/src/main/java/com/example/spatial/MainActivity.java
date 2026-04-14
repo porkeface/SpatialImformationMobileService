@@ -87,6 +87,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         aMap.setMapLanguage(AMap.CHINESE);
         aMap.setMapType(AMap.MAP_TYPE_NORMAL);
+        aMap.setOnMarkerClickListener(marker -> {
+            if (marker != null && marker.equals(currentMarker)) {
+                if (cardLocationInfo != null) {
+                    cardLocationInfo.setVisibility(View.VISIBLE);
+                }
+                return false;
+            }
+            return false;
+        });
 
         btnGoSite = findViewById(R.id.btn_go_site);
         btnShowHistory = findViewById(R.id.btn_show_history);
@@ -199,10 +208,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (id == R.id.fab_map_type) {
             toggleMapType();
         } else if (id == R.id.fab_my_location) {
-            // 点击定位时显示中央卡片
-            if (cardLocationInfo != null) {
-                cardLocationInfo.setVisibility(View.VISIBLE);
-            }
             checkPermissionAndLocate();
         } else if (id == R.id.btn_close_location) {
             // 点击关闭按钮隐藏卡片
@@ -255,7 +260,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         currentMarker = aMap.addMarker(new MarkerOptions()
                 .position(currentLatLng)
-                .title(buildMarkerSnippet(location)));
+                .title(getString(R.string.btn_my_location))
+                .snippet(buildMarkerSnippet(location)));
         aMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 16f));
         if (currentMarker != null) {
             currentMarker.showInfoWindow();
