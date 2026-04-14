@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.lab5"
+    namespace = "com.example.spatial"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.lab5"
+        applicationId = "com.example.spatial"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

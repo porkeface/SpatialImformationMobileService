@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">lab5</string>
-    <string name="amap_key">19ddcdf9012ddb44dcaf64625685bca6</string>
+    <string name="amap_key">61cae4b204f1ae1b924252b5595d0ad2</string>
     <string name="site_name">井冈山革命根据地</string>
     <string name="site_location">江西省吉安市井冈山市</string>
     <string name="site_hint">中心已切换到井冈山革命根据地</string>
