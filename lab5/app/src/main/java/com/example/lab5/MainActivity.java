@@ -1,4 +1,4 @@
-package com.example.lab4;
+package com.example.lab5;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
