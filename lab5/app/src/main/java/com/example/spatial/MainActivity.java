@@ -255,8 +255,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         currentMarker = aMap.addMarker(new MarkerOptions()
                 .position(currentLatLng)
-                .title(getString(R.string.my_location_title))
-                .snippet(buildAddress(location).isEmpty() ? getString(R.string.my_location_snippet) : buildAddress(location)));
+                .title(buildMarkerSnippet(location)));
         aMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 16f));
         if (currentMarker != null) {
             currentMarker.showInfoWindow();
@@ -268,7 +267,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 + "经度：" + location.getLongitude() + "\n"
                 + "纬度：" + location.getLatitude() + "\n"
                 + "精度：" + location.getAccuracy() + " 米\n"
-                + "地址：" + buildAddress(location) + "\n"
+                + "地址：" + buildDisplayAddress(location) + "\n"
                 + "国家：" + safe(location.getCountry()) + "\n"
                 + "省份：" + safe(location.getProvince()) + "\n"
                 + "城市：" + safe(location.getCity()) + "\n"
@@ -279,19 +278,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 + "时间：" + location.getTime();
     }
 
-    private String buildAddress(AMapLocation location) {
-        String address = safe(location.getAddress());
-        if (!address.isEmpty()) {
-            return address;
-        }
-
+    private String buildDisplayAddress(AMapLocation location) {
         StringBuilder builder = new StringBuilder();
         appendPart(builder, location.getProvince());
         appendPart(builder, location.getCity());
         appendPart(builder, location.getDistrict());
         appendPart(builder, location.getStreet());
         appendPart(builder, location.getStreetNum());
+
+        String poiOrAoi = buildPoiOrAoi(location);
+        if (!poiOrAoi.isEmpty()) {
+            if (builder.length() > 0) {
+                builder.append(" ");
+            }
+            builder.append(poiOrAoi);
+        }
+
         return builder.length() == 0 ? "暂无地址信息" : builder.toString();
+    }
+
+    private String buildPoiOrAoi(AMapLocation location) {
+        String poiName = safe(location.getPoiName());
+        if (!poiName.isEmpty()) {
+            return poiName;
+        }
+
+        String aoiName = safe(location.getAoiName());
+        if (!aoiName.isEmpty()) {
+            return aoiName;
+        }
+
+        return "";
+    }
+
+    private String buildMarkerSnippet(AMapLocation location) {
+        String poiOrAoi = buildPoiOrAoi(location);
+        return poiOrAoi.isEmpty() ? getString(R.string.my_location_snippet) : poiOrAoi;
     }
 
     private void appendPart(StringBuilder builder, String value) {
