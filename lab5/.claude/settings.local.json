@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm list *)",
+      "Bash(npm install *)",
+      "Bash(node generate_ppt.js)",
+      "Bash(python -m markitdown \"实验四实验五整合分享.pptx\")",
+      "Bash(python \"C:/Users/Hxxim/.claude/skills/pptx/scripts/office/soffice.py\" --headless --convert-to pdf \"实验四实验五整合分享.pptx\")",
+      "Bash(python -c ' *)",
+      "Bash(mkdir -p /mnt/user-data/outputs)",
+      "Bash(python /mnt/skills/public/image-generation/scripts/generate.py --prompt-file /mnt/user-data/workspace/slide-01-prompt.json --output-file /mnt/user-data/outputs/slide-01.jpg --aspect-ratio 16:9)",
+      "Bash(node -e ' *)",
+      "Bash(node generate_final_ppt.js)"
+    ]
+  }
+}
